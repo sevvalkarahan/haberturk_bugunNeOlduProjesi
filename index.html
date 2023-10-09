@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="image/Group 439.svg" alt="">
+    </div>
+    <div class="container">
+        <div class="main">
+            <div class="left">
+                <div class="icon">
+                    <i class="fa-regular fa-moon"></i>
+                    <i class="fa-regular fa-sun"></i>
+                </div>
+                <div class="left-container">
+                    <div class="left-center">
+                        <p class="date">26.25.2017</p>
+                        <p class="text-center">
+                            Bugün <br> ne oldu ?
+                        </p>
+                        <p class="comment-center">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry. Lorem Ipsum
+                            has been the industry’s standard dummy text...
+                        </p>
+                        <div class="button">
+                            <i class="fa-solid fa-bars" style="color: #f7e1e1;"></i>
+                            <button>
+                                <a href="page.html">GÖRÜNTÜLE</a>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="left-end">
+                    <div class="left-end-text">
+                        <p>Copyright © 2017 - Tüm hakları saklıdır. <br> Habertürk Gazetecilik A.Ş.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="number">01</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">02</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">03</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">04</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">05</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">06</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">07</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">08</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">09</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="number">10</div>
+                            <div class="swiper-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        let logo = document.querySelector('.logo');
+        let left = document.querySelector('.left');
+        let moon = document.querySelector('.fa-moon');
+        let sun = document.querySelector('.fa-sun');
+        let storageTheme=localStorage.getItem("theme");
+        if(storageTheme==="dark"){
+            darkTheme();
+        }
+        else{
+            lightTheme();
+        }
+        moon.addEventListener("click", () => {
+            darkTheme();
+            localStorage.setItem("theme", "dark");
+        });
+        sun.addEventListener("click", ()=>{
+            lightTheme();
+            localStorage.setItem("theme", "light");
+        });
+        function darkTheme(){
+            moon.style.display = "none";
+            sun.style.display = "block";
+            logo.style.backgroundColor = "#151d2b";
+            left.style.backgroundImage = "linear-gradient(to right, #151d2b, #373737), url(../image/11.png)";
+        }
+        
+        function lightTheme(){
+            moon.style.display="block";
+            sun.style.display="none";
+            logo.style.backgroundColor="#cf161c";
+            left.style.backgroundImage="linear-gradient(to right, #cf161c, #cf161cdc), url(../image/11.png)";
+        }
+
+    </script>
+</body>
+
+</html>
